@@ -1,5 +1,8 @@
-import React, { useState } from "react";
-import GreetingContext from "./GreetingContext";
+import React, { useState, createContext } from "react";
+// create GreetingContext without a component
+//import GreetingContext from "./GreetingContext";
+
+export const GreetingContext = createContext(null);
 
 function LanguageProvider({ children }) {
   const [value, setValue] = useState("english");

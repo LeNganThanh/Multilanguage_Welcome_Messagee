@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import GreetingContext from "./GreetingContext";
+import { GreetingContext } from "./LanguageContext";
 import options from "./Data";
 
 function Welcome() {
