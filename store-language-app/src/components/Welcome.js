@@ -1,12 +1,17 @@
 import { useContext } from "react";
 import GreetingContext from "./GreetingContext";
+import options from "./Data";
+
 function Welcome() {
-  const greetingText = useContext(GreetingContext);
+  const [value] = useContext(GreetingContext);
+
+  //greeting for Welcome component
+  const greeting = options.map(opt => (opt.value === value ? opt.banner : ""));
 
   return (
     <div>
       <br />
-      <h1 style={{ fontSize: "5rem" }}>{greetingText}</h1>
+      <h1 style={{ fontSize: "5rem" }}>{greeting}</h1>
     </div>
   );
 }

@@ -1,17 +1,23 @@
 import React from "react";
 import "./App.css";
-import Dropdown from "./components/Dropdown";
+import Header from "./components/Header";
+//import GreetingContext from "./components/GreetingContext";
+import LanguageProvider from "./components/LanguageContext";
+import Welcome from "./components/Welcome";
 
 function App() {
+  //by using LanguageProvide - don't need - const [value, setValue] = useState("english");
+
   return (
-    <div className="App">
-      <h1 className="header">Language Chooser</h1>
-      <label>Please select your language</label>
-      <Dropdown />
-    </div>
+    <LanguageProvider>
+      <div className="App">
+        <h1 className="header">Language Chooser</h1>
+        <Header />
+        <Welcome />
+      </div>
+    </LanguageProvider>
   );
 }
-
 export default App;
 
 /* without useContext - we have to 
@@ -19,7 +25,7 @@ export default App;
 2. import Welcome component
 2. set the props for Welcome
 
-import options from "./components/Options";
+import options from "./components/data";
 import Welcome from "./components/Welcome";
 
 function App() {
